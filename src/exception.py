@@ -1,5 +1,5 @@
 import sys # This is used to get the information about the current exception
-import logging # This is used to log the error message
+from src.logger import logging # This is used to log the error message
 
 def error_message_detail(error,error_detail:sys): # This function will return the error message with the file name and line number where the error occurred
     _,_,exc_tb=error_detail.exc_info() # This will get the current exception information
@@ -33,12 +33,13 @@ class CustomeException(Exception): # This is a custom exception class that inher
         def __str__(self): # This is the string representation of the custom exception 
             return self.error_message # This will return the error message with the file name and line number where the error occurred
             
-#if __name__=="__main__": # This is the main function that will be executed when the script is run
+
+
+#if __name__ == "__main__": # This is the main function that will be executed when the script is run
     #try:
         #a = 1 / 0 # This will raise a ZeroDivisionError
     #except Exception as e: # This will catch the exception and print the error message
+        #logging.info("ZeroDivisionError occurred") # This will log the error message
         #raise CustomeException(e, sys) # This will raise the custom exception with the error message and error details
-
-    
 
 
